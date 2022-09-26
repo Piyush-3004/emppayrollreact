@@ -1,25 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './Content/Home';
+import { Routes,Route } from 'react-router-dom';
+import Form from './Content/Form';
+import EditUser from './Content/EditUser';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path='/form' element={<Form />} />
+      <Route path='/edituser/:empId' element={<EditUser />} />
+    </Routes>
+    );
 }
 
 export default App;
